@@ -46,7 +46,8 @@ This is a sample application for learning Laravel & React.js.
 
 https://laraec.isystk.com/
 
-! [Front screen] (./front.png "Front screen")
+![Front screen](./front.png "Front screen")
+
 
 - Login / Logout
 - Member registration
@@ -62,7 +63,7 @@ https://laraec.isystk.com/
 
 https://laraec.isystk.com/admin/
 
-![Administration screen] (./admin.png "Administration screen")
+![Administration screen](./admin.png "Administration screen")
 
 - Login / Logout
 - Product management
