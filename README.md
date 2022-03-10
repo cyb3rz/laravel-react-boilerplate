@@ -12,24 +12,24 @@
 This is a sample application for learning Laravel & React.js.
 
 ### Target people
---For those who want to learn Laravel for the first time
---Those who want to build a Laravel development environment using Docker
---Those who want to learn EC sites
---Those who want to create a management screen (multi-login)
---Those who want to create a settlement process using Stripe
---Those who want to create social login
---For those who want to create an image upload to object storage
---Those who want to create a front end with React.js
+- For those who want to learn Laravel for the first time
+- Those who want to build a Laravel development environment using Docker
+- Those who want to learn EC sites
+- Those who want to create a management screen (multi-login)
+- Those who want to create a settlement process using Stripe
+- Those who want to create social login
+- For those who want to create an image upload to object storage
+- Those who want to create a front end with React.js
 
 ### Technology used
 
 #### ■ Infrastructure
---Apache 2.4.46 ... Apache has been adopted as the Web server. Since the self-signed certificate has already been set, it can operate as SSL in the development environment.
---MySQL 8 ... MySQL is adopted as the DB server. Data files, configuration files, logs, etc. are taken out of the container so that they can be referenced during development.
---phpMyAdmin: A tool for referencing and editing the started MySQL data.
---MailHog: A dummy SMTP server. You can view the sent email with your browser. Since the email is not actually sent, there is no need to worry about sending it by mistake during development.
---Minio: Object storage that is completely compatible with S3. It is used as a save destination for uploaded images.
---Redis: A persistent in-memory database. It is used as a cache of data acquired from the DB.
+- Apache 2.4.46 ... Apache has been adopted as the Web server. Since the self-signed certificate has already been set, it can operate as SSL in the development environment.
+- MySQL 8 ... MySQL is adopted as the DB server. Data files, configuration files, logs, etc. are taken out of the container so that they can be referenced during development.
+- phpMyAdmin: A tool for referencing and editing the started MySQL data.
+- MailHog: A dummy SMTP server. You can view the sent email with your browser. Since the email is not actually sent, there is no need to worry about sending it by mistake during development.
+- Minio: Object storage that is completely compatible with S3. It is used as a save destination for uploaded images.
+- Redis: A persistent in-memory database. It is used as a cache of data acquired from the DB.
 
 #### ■ Application
 
@@ -48,15 +48,15 @@ https://laraec.isystk.com/
 
 ! [Front screen] (./front.png "Front screen")
 
---Login / Logout
+- Login / Logout
 - Member registration
---Password reminder
+- Password reminder
 - Product list
 - add to cart
---Stripe
---Add to favorites
+- Stripe
+- Add to favorites
 - inquiry
---Social login (Google)
+- Social login (Google)
 
 #### ■ Management screen (Bootstrap)
 
@@ -64,20 +64,20 @@ https://laraec.isystk.com/admin/
 
 ! [Administration screen] (./admin.png "Administration screen")
 
---Login / Logout
---Product management
+- Login / Logout
+- Product management
 - Order history
---Customer management
---Inquiry management
---Image management
---CSV download
---PDF download
---Image upload
+- Customer management
+- Inquiry management
+- Image management
+- CSV download
+- PDF download
+- Image upload
 
 #### ■ Batch processing
 
---Product CSV output batch
---S3 product image upload batch
+- Product CSV output batch
+- S3 product image upload batch
 
 ## 🔧 Building a development environment
 
