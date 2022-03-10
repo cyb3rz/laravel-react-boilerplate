@@ -7,31 +7,31 @@
 ![GitHub stars](https://img.shields.io/github/stars/isystk/laravel-react-boilerplate)
 ![GitHub license](https://img.shields.io/github/license/isystk/laravel-react-boilerplate)
 
-## 📗 プロジェクトの概要
+## 📗 Project overview
 
-Laravel ＆ React.js の学習用サンプルアプリケーションです。
+This is a sample application for learning Laravel & React.js.
 
-### 対象としている方
-- Laravelを初めて学習してみたい方
-- Dockerを利用したLaravelの開発環境を構築したい方
-- ECサイトを学習してみたい方
-- 管理画面も作成（マルチログイン）を作成したい方
-- Stripeを利用した決算処理を作成してみたい方
-- ソーシャルログインを作成してみたい方
-- オブジェクトストレージへの画像アップロードを作成してみたい方
-- フロントエンドをReact.jsで作成してみたい方
+### Target people
+--For those who want to learn Laravel for the first time
+--Those who want to build a Laravel development environment using Docker
+--Those who want to learn EC sites
+--Those who want to create a management screen (multi-login)
+--Those who want to create a settlement process using Stripe
+--Those who want to create social login
+--For those who want to create an image upload to object storage
+--Those who want to create a front end with React.js
 
-### 利用している技術
+### Technology used
 
-#### ■ インフラ
-- Apache 2.4.46　・・・　WebサーバーとしてApacheを採用しました。自己証明書を設定済みなので開発環境でSSLとして動作可能です。
-- MySQL 8　・・・　DBサーバーにはMySQLを採用しました。データファイルや設定ファイル、 ログなどはコンテナの外に出して 開発時に参照出来るようにしています。
-- phpMyAdmin　・・・　起動したMySQLのデータを参照・編集するためのツールです。
-- MailHog 　・・・　ダミーのSMTPサーバーです。送信したメールをブラウザで閲覧することが可能です。実際にはメールは送信されないので開発時の誤送信してしまう心配がありません。
-- Minio 　・・・　S3に完全互換性のあるオブジェクトストレージです。アップロードした画像の保存先として利用しています。
-- Redis 　・・・　永続化可能なインメモリデータベースです。DBから取得したデータのキャッシュとして利用しています。
+#### ■ Infrastructure
+--Apache 2.4.46 ... Apache has been adopted as the Web server. Since the self-signed certificate has already been set, it can operate as SSL in the development environment.
+--MySQL 8 ... MySQL is adopted as the DB server. Data files, configuration files, logs, etc. are taken out of the container so that they can be referenced during development.
+--phpMyAdmin: A tool for referencing and editing the started MySQL data.
+--MailHog: A dummy SMTP server. You can view the sent email with your browser. Since the email is not actually sent, there is no need to worry about sending it by mistake during development.
+--Minio: Object storage that is completely compatible with S3. It is used as a save destination for uploaded images.
+--Redis: A persistent in-memory database. It is used as a cache of data acquired from the DB.
 
-#### ■ アプリケーション
+#### ■ Application
 
 - Laravel 6.20.17
 - React 16.2.0
@@ -42,83 +42,83 @@ Laravel ＆ React.js の学習用サンプルアプリケーションです。
 
 ## 🌐 Demo
 
-#### ■ フロント画面（React）
+#### ■ Front screen (React)
 
 https://laraec.isystk.com/
 
-![フロント画面](./front.png "フロント画面")
+! [Front screen] (./front.png "Front screen")
 
-- ログイン/ログアウト
-- 会員登録
-- パスワードリマインダ
-- 商品一覧
-- カートに追加
-- 決算処理（Stripe）
-- お気に入り追加
-- お問い合わせ
-- ソーシャルログイン（Google）
+--Login / Logout
+- Member registration
+--Password reminder
+- Product list
+- add to cart
+--Stripe
+--Add to favorites
+- inquiry
+--Social login (Google)
 
-#### ■ 管理画面（Bootstrap）
+#### ■ Management screen (Bootstrap)
 
 https://laraec.isystk.com/admin/
 
-![管理画面](./admin.png "管理画面")
+! [Administration screen] (./admin.png "Administration screen")
 
-- ログイン/ログアウト
-- 商品管理
-- 注文履歴
-- 顧客管理
-- お問い合わせ管理
-- 画像管理
-- CSVダウンロード
-- PDFダウンロード
-- 画像アップロード
+--Login / Logout
+--Product management
+- Order history
+--Customer management
+--Inquiry management
+--Image management
+--CSV download
+--PDF download
+--Image upload
 
-#### ■ バッチ処理
+#### ■ Batch processing
 
-- 商品CSV出力バッチ
-- S3商品画像アップロードバッチ
+--Product CSV output batch
+--S3 product image upload batch
 
-## 🔧 開発環境の構築
+## 🔧 Building a development environment
 
-※ この環境を利用する為には、事前にdocker、docker-composeが動作する状態であることが前提条件です。
-(Windowsの場合は、以下を参考に「WSL」と「Docker Desktop for Windows」を用意してください)
+* In order to use this environment, it is a prerequisite that docker and docker-compose are operating in advance.
+(For Windows, prepare "WSL" and "Docker Desktop for Windows" by referring to the following.)
 
-### WSLのインストール（Windowsの場合）
-参考
+### WSL installation (for Windows)
+reference
 https://docs.microsoft.com/ja-jp/windows/wsl/install
 
-WSLでUbuntuを起動する
-```
-# 初回起動時に、ユーザ名とパスワードが聞かれます。
-# 何も入力せずにEnterを押すとroot ユーザーで利用できるようになるので、rootユーザーとして設定します。
+Start Ubuntu with WSL
+`` ```
+# The first time you launch it, you will be asked for your username and password.
+# If you press Enter without typing anything, it will be available as the root user, so set it as the root user.
 
-# 初めにライブラリを最新化します。
+#First, refresh the library.
 $ apt update
 
-# 日本語に対応しておきます。
+# Japanese is supported.
 $ apt -y install language-pack-ja
 $ update-locale LANG=ja_JP.UTF8
 $ apt -y install manpages-ja manpages-ja-dev
 ```
 
-### Docker Desktop for Windows のインストール（Windowsの場合）
+### Install Docker Desktop for Windows (for Windows)
 
 https://docs.docker.com/docker-for-windows/install/
-```
-↓コマンドプロンプトでバージョンが表示されればOK
+`` ```
+↓ OK if the version is displayed at the command prompt
 docker --version
 ```
 
-### WSL2から、Docker for Windows を利用できるようにする（Windowsの場合）
-参考
+### Make Docker for Windows available from WSL2 (for Windows)
+reference
 https://qiita.com/endo_hizumi/items/0cc50bdfbd827579733e
 ```
-１．通知領域から、dockerのアイコンを右クリックして、Settingを選択
-２．Generalのexpose deamon on~~のチェックを入れます。
-３．ResourcesのWSL INTEGRATION から、"Ubuntu" をスイッチをONにします。
+1. 1. From the notification area, right-click the docker icon and select Setting
+2. 2. Check General expose deamon on ~~.
+3. 3. From WSL INTEGRATION in Resources, switch on "Ubuntu".
 
-WSL 側のルートを Docker for Windows に合わせるように WSL のマウント設定を行います。
+Set the WSL mount so that the root on the WSL side matches Docker for Windows.
 $ vi /etc/wsl.conf
 ---
 [automount]
@@ -126,42 +126,42 @@ root = /
 options = "metadata"
 ---
 
-以下のように Cドライブのパスが"/mnt/c/"→"/c/" に変更されていれば正常です。
+It is normal if the path of the C drive is changed from "/ mnt / c /" to "/ c /" as shown below.
 $ cd /c/Users/USER/github/laravel-react-boilerplate
 $ pwd
 /c/Users/USER/github/laravel-react-boilerplate
 
-# WSL 上にDockerとDocker Composeをインストールする。
+# Install Docker and Docker Compose on WSL.
 $ apt install docker
 $ apt install docker-compose
 
-これでWSLからWindows側にインストールしたDockerが利用できるようになります。
+Now you can use Docker installed on the Windows side from WSL.
 ```
 
-### MySQL Client のインストール
+### Installation of MySQL Client 
 
 ```
-# MySQLに接続する為のコマンドをインストールします。（バージョンは何でもOK）
+# Install the command to connect to MySQL. (Any version is OK)
 
-# Windowsの場合
+#For Windows
 $ apt install mysql-client
 
-# Macの場合
+#For Mac
 $ brew install mysql-client
 ```
 
-### Node.js のインストール
+### Installation of Node.js 
 
 ```
-# Windowsの場合
-$ curl -L git.io/nodebrew | perl - setup
-# Macの場合
+#For Windows
+$ curl -L git.io/nodebrew | perl --setup
+#For Mac
 $ brew install nodebrew
 
-# nodebrew をシェルのパスに追加する
+# Add nodebrew to the shell path
 $ echo 'export PATH=$HOME/.nodebrew/current/bin:$PATH' >> ~/.bashrc
 
-# Node.js をインストール 
+# Install Node.js
 $ mkdir -p ~/.nodebrew/src
 $ nodebrew ls-remote
 $ nodebrew install v12.21.0
@@ -173,177 +173,174 @@ $ npm install -g yarn
 
 ```
 .
-├── docker （各種Daemon）
-│   │
-│   ├── apache （Webサーバー）
-│   │   ├── conf.d (apacheの設定ファイル)
-│   │   └── logs （apacheのログ）
-│   ├── mysql （DBサーバー）
-│   │   ├── conf.d (mysqlの設定ファイル)
-│   │   ├── data (mysqlのデータファイル)
-│   │   ├── init （mysqlの初期DDL）
-│   │   ├── logs （mysqlのログ）
-│   │   └── script （mysql関連のスクリプト）
-│   ├── php （PHP-FRM）
-│   │   └── logs （phpのログ）
-│   ├── phpmyadmin （DB管理ツール）
-│   └── s3 （オブジェクトストレージ）
+├── docker (various Daemons)
+│ │
+│ ├── apache (Web server)
+│ │ ├── conf.d (apache configuration file)
+│ │ └── logs (apache logs)
+│ ├── mysql (DB server)
+│ │ ├── conf.d (mysql configuration file)
+│ │ ├── data (mysql data file)
+│ │ ├── init (initial DDL for mysql)
+│ │ ├── logs (mysql logs)
+│ │ └── script (mysql related script)
+│ ├── php (PHP-FRM)
+│ │ └── logs (php log)
+│ ├── phpmyadmin (DB administration tool)
+│ └── s3 (object storage)
 │
-├── htdocs （Apache公開ディレクトリ）
-│   │
-│   ├── app
-│   │   ├── Console (バッチアプリケーション)
-│   │   ├── Exceptions (例外処理)
-│   │   ├── Http （Webアプリケーション）
-│   │   ├── Models（モデル）
-│   │   ├── Prociders（サービスプロバイダー）
-│   │   └── Services（共通処理）
-│   ├── bootstrap
-│   ├── config
-│   ├── database
-│   ├── public
-│   ├── resources
-│   ├── routes
-│   ├── storage
-│   ├── tests
-│   └── composer.json
-└── dc.sh （Dockerの起動用スクリプト）
+├── htdocs (Apache public directory)
+│ │
+│ ├── app
+│ │ ├── Console (batch application)
+│ │ ├── Exceptions (exception handling)
+│ │ ├── Http (Web application)
+│ │ ├── Models
+│ │ ├── Prociders (service provider)
+│ │ └── Services (common processing)
+│ ├── bootstrap
+│ ├── config
+│ ├── database
+│ ├── public
+│ ├── resources
+│ ├── routes
+│ ├── storage
+│ ├── tests
+│ └── composer.json
+└── dc.sh (script for starting Docker)
 ```
 
-## 🖊️ Docker 操作用シェルスクリプトの使い方
-
+## 🖊️ How to use shell script for Docker operation
 ```
 Usage:
   dc.sh [command] [<options>]
 
 Options:
-  stats|st                 Dockerコンテナの状態を表示します。
-  init                     Dockerコンテナ・イメージ・生成ファイルの状態を初期化します。
-  start                    すべてのDaemonを起動します。
-  stop                     すべてのDaemonを停止します。
-  apache restart           Apacheを再起動します。
-  mysql login              MySQLデータベースにログインします。
-  mysql export <PAHT>      MySQLデータベースのdumpファイルをエクスポートします。
-  mysql import <PAHT>      MySQLデータベースにdumpファイルをインポートします。
-  mysql restart            MySQLデータベースを再起動します。
-  php login                PHP-FPMのサーバーにログインします。
-  php cache                Laravelのキャッシュをクリアします。
-  php migrate              Laravelのマイグレードを実行します。
-  php seed                 Laravelのテストデータを登録します。
-  --version, -v     バージョンを表示します。
-  --help, -h        ヘルプを表示します。
+  stats|st                 Shows the status of Docker containers.
+  init                     Initializes the state of the Docker container, image, and generated file.。
+  start                    Starts all Daemons.
+  stop                     Stops all Daemons.
+  apache restart           Restart Apache.
+  mysql login              Log in to the MySQL database.
+  mysql export <PAHT>      Export the dump file for the MySQL database.
+  mysql import <PAHT>      Import the dump file into the MySQL database.
+  mysql restart            Restarts the MySQL database.
+  php login                PHP-Log in to the FPM server.
+  php cache                Clear Laravel's cache.
+  php migrate              Run migration of Laravel.
+  php seed                 Register the test data of Laravel.
+  --version, -v            Show the version.
+  --help, -h               Display help.
 ```
 
 ### phpMyAdmin 
-データベースに接続してデータの参照や編集が可能です。
-Dockerを起動後に以下のURLにアクセスすると利用可能です。
+You can connect to the database to view and edit the data.
+It can be used by accessing the following URL after starting Docker.。
 
 http://localhost:8888/
 
 
 ### mailhog 
-ダミーのメールサーバーです。実際にはメールは送信されず、送信されたメールはブラウザで閲覧できます。
-Dockerを起動後に以下のURLにアクセスすると利用可能です。
-
+This is a dummy mail server. The email is not actually sent, and you can view the sent email in your browser.
+You can use it by accessing the following URL after starting Docker.
 http://localhost:8025/
 
 ### minio
-S3に準拠したダミーのオブジェクトストレージです。
-Dockerを起動後に以下のURLにアクセスすると利用可能です。
+Dummy object storage compliant with S3.
+You can use it by accessing the following URL after starting Docker.
 
 http://localhost:9001
 Username / Password
 access_key / secret_key
 
 ```bash
-# AWS-CLIにアクセスする。
+# Access AWS-CLI.
 $ ./dc.sh aws local
-# バケットを作成する
+# Create a bucket
 > aws --endpoint-url http://s3:9000 s3 mb s3://laraec.isystk.com
-# バケットを公開する
+# Publish the bucket
 > POLICY='{ "Version": "2012-10-17", "Statement": [{ "Sid": "MakeItPublic", "Effect": "Allow", "Principal": "*", "Action": "s3:GetObject", "Resource": "arn:aws:s3:::laraec.isystk.com/*" }] }'
 > aws --endpoint-url http://s3:9000 s3api put-bucket-policy --bucket laraec.isystk.com --policy "${POLICY}"
-# バケットの一覧を確認する
+# Check the list of buckets
 > aws --endpoint-url http://s3:9000 s3 ls
-# テストファイルをアップロードする
+# Upload the test file
 > aws --endpoint-url http://s3:9000 s3 cp ./front.png s3://laraec.isystk.com
 $ open http://localhost:9000/laraec.isystk.com/front.png
 ```
 
-## 💬 使い方
+## 💬 How to use
 
 ```
-# 下準備
+# Get ready
 $ ./dc.sh init
 
-# サーバーを起動する
+# Start the server
 $ ./dc.sh start
 
-# データベースとPHPが立ち上がるまで少し待ちます。(初回は5分程度)
+# Wait a moment for the database and PHP to come up. (About 5 minutes for the first time)
 
-# MySQLにログインしてみる
+# Try logging in to MySQL
 $ ./dc.sh mysql login
 
-# PHPサーバーにログインしてみる（composer や artisan などのコマンドは基本的にここで行う）
+# Try logging in to the PHP server (commands such as composer and artisan are basically done here)
 $ ./dc.sh php login
 
-# .envをコピーする
+# Copy .env
 > cp .env.example .env
 
-# encryption keyを生成する
+# encryption Generate key
 > php artisan key:generate
 
-# モジュールをダウンロード
+# Download module
 > composer update
 > php artisan cache:clear
 > php artisan config:clear
-# テーブルとテストデータの作成
+# Creating tables and test data
 > php artisan migrate:fresh --seed
 > chmod 777 -R bootstrap/cache
 > hmod 777 -R storage
 
-# テスト用の画像をS3（Minio）にアップロードします。
+# Upload the test image to S3 (Minio).
 > php artisan s3upload
 
-# アップロードした画像を参照できるようにシンボリックリンクを作成する
+# Create a symbolic link so that you can refer to the uploaded image
 > cd public
 > ln -s ../storage/app/public uploads
 
-# フロントエンドをビルドする。
+# Build the front end.
 $ cd htdocs
 $ yarn && yarn run dev
 
-# ブラウザでアクセス（フロント）
+# Access with a browser (front)
 $ open https://localhost/
 
-# ブラウザでアクセス（管理画面）
+# Access with a browser (management screen)
 $ open https://localhost/admin/
 
-# バッチを実行する（商品CSV出力バッチ）
+# Execute batch (product CSV output batch)
 $ ./dc.sh php login
 $ php artisan stockcsv
 
-# サーバーを停止する場合
+# When stopping the server
 $ ./dc.sh stop
 ```
 
-## 🎨 参考
+## 🎨 Reference
 
-| プロジェクト| 概要|
+| Project | Overview |
 | :---------------------------------------| :-------------------------------|
-| [Laravel6公式ドキュメント](https://readouble.com/laravel/6.x/ja/)| Laravel6公式ドキュメントです。|
-| [ヘルパ関数](https://readouble.com/laravel/6.x/ja/helpers.html)| Laravel の開発で便利なヘルパ関数の説明です。|
-| [クエリービルダ](https://readouble.com/laravel/6.x/ja/queries.html)| Laravel の開発でDBアクセス時に必要なクエリービルダの説明です。|
-| [AdminLTE Docs](https://adminlte.io/docs/2.4/installation)| AdminLTE Docs|
-| [Bootstrap4 日本語リファレンス](https://getbootstrap.jp/docs/4.4/getting-started/introduction/)| Bootstrap4 日本語リファレンス|
-| [fontawesome](https://fontawesome.com/icons?d=gallery)| アイコン表示で利用しています。|
-| [Laravel5.4でマルチ認証（userとadmin）を実装する方法](https://takahashi-it.com/php/laravel54-multi-auth/)| Laravel でマルチ認証（userとadmin）を実装する方法で参考にしました。|
-| [LaravelでのStripeの環境を作成する](https://takkublog.net/stripe01/)| Laravel で決算処理を作成する方法で参考にしました。 |
-| [Laravel+Socialiteで簡単ソーシャルログイン実装!](https://qiita.com/KeisukeKudo/items/18dd8a342a4bdd43913c)| Laravel でソーシャルログインを作成する方法で参考にしました。 |
-| [WSL2 で dns の名前解決ができなくなって ネット接続できなくなった場合の対処方法](https://qiita.com/kkato233/items/1fc71bde5a6d94f1b982)| WSL2 で dns の名前解決ができなくなって ネット接続できなくなった際に参考にしました。 |
-| [Laravelの認証画面をReactで全とっかえ](https://qiita.com/shikigamix/items/99a4f2ab5911248f8b2f)| Laravelのフロントエンドの認証周りをReactで作成する方法で参考にしました。 |
-| [react-bootstrap](https://react-bootstrap.github.io/components/)| BootstrapのReact用コンポーネント |
-
+| [Laravel6 Official Document] (https://readouble.com/laravel/6.x/ja/) | Laravel6 Official Document. |
+| [Helper Functions] (https://readouble.com/laravel/6.x/ja/helpers.html) | This is a description of helper functions that are useful for developing Laravel. |
+| [Query Builder] (https://readouble.com/laravel/6.x/ja/queries.html) | This is a description of the query builder required when accessing the DB in Laravel development. |
+| [AdminLTE Docs] (https://adminlte.io/docs/2.4/installation) | AdminLTE Docs |
+| [Bootstrap4 Japanese Reference] (https://getbootstrap.jp/docs/4.4/getting-started/introduction/) | Bootstrap4 Japanese Reference |
+| [fontawesome] (https://fontawesome.com/icons?d=gallery) | Used for icon display. |
+| [How to implement multi-authentication (user and admin) in Laravel 5.4] (https://takahashi-it.com/php/laravel54-multi-auth/) | Implement multi-authentication (user and admin) in Laravel I used it as a reference. |
+| [Creating a Stripe environment in Laravel] (https://takkublog.net/stripe01/) | I referred to how to create a settlement process in Laravel. |
+| [Easy social login implementation with Laravel + Socialite!] (Https://qiita.com/KeisukeKudo/items/18dd8a342a4bdd43913c) | I referred to how to create social login with Laravel. |
+| [What to do if you can't resolve dns names with WSL2 and can't connect to the internet] (https://qiita.com/kkato233/items/1fc71bde5a6d94f1b982) | I used it as a reference when I couldn't do it. |
+| [Replace all Laravel authentication screens with React] (https://qiita.com/shikigamix/items/99a4f2ab5911248f8b2f) | I referred to how to create Laravel front end authentication with React. |
+| [react-bootstrap] (https://react-bootstrap.github.io/components/) | Bootstrap React components |
 
 ## 🎫 Licence
 
