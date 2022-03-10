@@ -62,7 +62,7 @@ https://laraec.isystk.com/
 
 https://laraec.isystk.com/admin/
 
-! [Administration screen] (./admin.png "Administration screen")
+![Administration screen] (./admin.png "Administration screen")
 
 - Login / Logout
 - Product management
@@ -89,7 +89,7 @@ reference
 https://docs.microsoft.com/ja-jp/windows/wsl/install
 
 Start Ubuntu with WSL
-`` ```
+````
 # The first time you launch it, you will be asked for your username and password.
 # If you press Enter without typing anything, it will be available as the root user, so set it as the root user.
 
@@ -100,23 +100,23 @@ $ apt update
 $ apt -y install language-pack-ja
 $ update-locale LANG=ja_JP.UTF8
 $ apt -y install manpages-ja manpages-ja-dev
-```
+````
 
 ### Install Docker Desktop for Windows (for Windows)
 
 https://docs.docker.com/docker-for-windows/install/
-`` ```
+````
 ↓ OK if the version is displayed at the command prompt
 docker --version
-```
+````
 
 ### Make Docker for Windows available from WSL2 (for Windows)
 reference
 https://qiita.com/endo_hizumi/items/0cc50bdfbd827579733e
 ```
-1. 1. From the notification area, right-click the docker icon and select Setting
-2. 2. Check General expose deamon on ~~.
-3. 3. From WSL INTEGRATION in Resources, switch on "Ubuntu".
+1. From the notification area, right-click the docker icon and select Setting
+2. Check General expose deamon on ~~.
+3. From WSL INTEGRATION in Resources, switch on "Ubuntu".
 
 Set the WSL mount so that the root on the WSL side matches Docker for Windows.
 $ vi /etc/wsl.conf
